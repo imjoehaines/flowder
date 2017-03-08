@@ -19,8 +19,6 @@ class DirectoryLoader implements LoaderInterface
 
         $fileLoader = new FileLoader($this->persister);
 
-        foreach ($phpFiles as $phpFile) {
-            $fileLoader->load($phpFile);
-        }
+        array_walk($phpFiles, [$fileLoader, 'load']);
     }
 }
