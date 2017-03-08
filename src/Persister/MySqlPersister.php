@@ -44,9 +44,7 @@ class MySqlPersister implements PersisterInterface
 
         $statement = $this->db->prepare($query);
 
-        $values = array_reduce($data, function (array $carry, array $row) {
-            return array_merge($carry, array_values($row));
-        }, []);
+        $values = array_merge(...array_map('array_values', $data));
 
         return $statement->execute($values);
     }
