@@ -4,10 +4,10 @@ namespace Imjoehaines\Flowder\Test\Integration\Persister;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader;
+use Imjoehaines\Flowder\Loader\FileLoader;
 use Imjoehaines\Flowder\Persister\PdoPersister;
 
-class LoaderTest extends TestCase
+class FileLoaderTest extends TestCase
 {
     public function testItLoadsFixturesFromAGivenFile()
     {
@@ -22,9 +22,9 @@ class LoaderTest extends TestCase
 
         $persister = new PdoPersister($db);
 
-        $loader = new Loader($persister);
+        $loader = new FileLoader($persister);
 
-        $loader->load(__DIR__ . '/../data/loader_test_data.php');
+        $loader->load(__DIR__ . '/../../data/loader_test_data.php');
 
         $statement = $db->prepare('SELECT * FROM loader_test_data');
         $statement->execute();

@@ -1,10 +1,10 @@
 <?php
 
-namespace Imjoehaines\Flowder;
+namespace Imjoehaines\Flowder\Loader;
 
 use Imjoehaines\Flowder\Persister\PersisterInterface;
 
-class Loader
+class FileLoader implements LoaderInterface
 {
     private $persister;
 
