@@ -5,7 +5,7 @@ namespace Imjoehaines\Flowder\Test\Integration\Persister;
 use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader;
-use Imjoehaines\Flowder\Persister\MySqlPersister;
+use Imjoehaines\Flowder\Persister\PdoPersister;
 
 class LoaderTest extends TestCase
 {
@@ -20,7 +20,7 @@ class LoaderTest extends TestCase
             column3 TEXT
         )');
 
-        $persister = new MySqlPersister($db);
+        $persister = new PdoPersister($db);
 
         $loader = new Loader($persister);
 

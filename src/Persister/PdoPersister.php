@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Persister;
 
 use PDO;
 
-class MySqlPersister implements PersisterInterface
+class PdoPersister implements PersisterInterface
 {
     /**
      * @var PDO

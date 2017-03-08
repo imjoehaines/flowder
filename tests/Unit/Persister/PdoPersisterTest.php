@@ -6,9 +6,9 @@ use PDO;
 use PDOStatement;
 use Prophecy\Prophet;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\MySqlPersister;
+use Imjoehaines\Flowder\Persister\PdoPersister;
 
-class MySqlPersisterTest extends TestCase
+class PdoPersisterTest extends TestCase
 {
     public function testItRunsOneInsertForASingleRowOfData()
     {
@@ -26,7 +26,7 @@ class MySqlPersisterTest extends TestCase
             'value 2',
         ])->shouldBeCalled()->willReturn(true);
 
-        $persister = new MySqlPersister($db->reveal());
+        $persister = new PdoPersister($db->reveal());
 
         $actual = $persister->persist('table_name', [
             [
@@ -62,7 +62,7 @@ class MySqlPersisterTest extends TestCase
             'value 8',
         ])->shouldBeCalled()->willReturn(true);
 
-        $persister = new MySqlPersister($db->reveal());
+        $persister = new PdoPersister($db->reveal());
 
         $actual = $persister->persist('table_name', [
             [

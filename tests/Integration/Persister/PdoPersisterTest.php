@@ -4,9 +4,9 @@ namespace Imjoehaines\Flowder\Test\Integration\Persister;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\MySqlPersister;
+use Imjoehaines\Flowder\Persister\PdoPersister;
 
-class MySqlPersisterTest extends TestCase
+class PdoPersisterTest extends TestCase
 {
     public function testItRunsOneInsertForASingleRowOfData()
     {
@@ -19,7 +19,7 @@ class MySqlPersisterTest extends TestCase
             column3 TEXT
         )');
 
-        $persister = new MySqlPersister($db);
+        $persister = new PdoPersister($db);
 
         $actual = $persister->persist('test_table', [
             [
@@ -58,7 +58,7 @@ class MySqlPersisterTest extends TestCase
             column3 TEXT
         )');
 
-        $persister = new MySqlPersister($db);
+        $persister = new PdoPersister($db);
 
         $actual = $persister->persist('test_table', [
             [
