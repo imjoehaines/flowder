@@ -7,11 +7,6 @@ use PDO;
 interface PersisterInterface
 {
     /**
-     * @param PDO $db
-     */
-    public function __construct(PDO $db);
-
-    /**
      * Persist an array of data
      *
      * @param string $table
