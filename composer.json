@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Imjoehaines\\Flowder\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Imjoehaines\\Flowder\\Test\\": "tests/"
+      }
+    }
+}
