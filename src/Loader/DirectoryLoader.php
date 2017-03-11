@@ -2,8 +2,6 @@
 
 namespace Imjoehaines\Flowder\Loader;
 
-use Imjoehaines\Flowder\Persister\PersisterInterface;
-
 class DirectoryLoader implements LoaderInterface
 {
     public function load($directory)
