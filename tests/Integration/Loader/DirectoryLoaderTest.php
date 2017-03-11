@@ -67,7 +67,7 @@ class DirectoryLoaderTest extends TestCase
         ];
 
         $loader = new DirectoryLoader();
-        $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test/');
+        $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test');
 
         $this->assertSame($expected, $actual);
     }
