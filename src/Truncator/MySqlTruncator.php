@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Truncator;
 
 use PDO;
 
-class MySqlTruncator
+class MySqlTruncator implements TruncatorInterface
 {
     private $db;
 
