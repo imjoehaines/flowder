@@ -23,6 +23,8 @@ class CachingLoaderTest extends TestCase
             ],
         ];
 
+        $this->assertSame(0, FileRequireCounter::$count);
+
         $fileLoader = new FileLoader();
         $loader = new CachingLoader($fileLoader);
 
@@ -38,6 +40,8 @@ class CachingLoaderTest extends TestCase
 
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
         $this->assertSame($expected, $actual);
+
+        $this->assertSame(1, FileRequireCounter::$count);
     }
 
     public function testItLoadsFixturesFromAGivenDirectoryAndCachesTheResult()
@@ -57,6 +61,8 @@ class CachingLoaderTest extends TestCase
             ],
         ];
 
+        $this->assertSame(0, FileRequireCounter::$count);
+
         $directoryLoader = new DirectoryLoader();
         $loader = new CachingLoader($directoryLoader);
 
@@ -72,5 +78,7 @@ class CachingLoaderTest extends TestCase
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');
         $this->assertSame($expected, $actual);
+
+        $this->assertSame(2, FileRequireCounter::$count);
     }
 }
