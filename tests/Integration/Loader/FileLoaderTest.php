@@ -1,6 +1,6 @@
 <?php
 
-namespace Imjoehaines\Flowder\Test\Integration\Persister;
+namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
