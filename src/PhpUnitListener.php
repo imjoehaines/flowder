@@ -6,21 +6,30 @@ use PHPUnit_Framework_Test;
 use InvalidArgumentException;
 use PHPUnit\Framework\BaseTestListener;
 use Imjoehaines\Flowder\Loader\LoaderInterface;
+use Imjoehaines\Flowder\Persister\PersisterInterface;
+use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 
 class PhpUnitListener extends BaseTestListener
 {
-    public function __construct($path, LoaderInterface $loader)
-    {
-        if (!file_exists($path)) {
-            throw new InvalidArgumentException(sprintf('The file or directory "%s" does not exist!', $path));
-        }
-
+    public function __construct(
+        $thingToLoad,
+        TruncatorInterface $truncator,
+        LoaderInterface $loader,
+        PersisterInterface $persister
+    ) {
+        $this->thingToLoad = $thingToLoad;
+        $this->truncator = $truncator;
         $this->loader = $loader;
-        $this->path = $path;
+        $this->persister = $persister;
     }
 
     public function startTest(PHPUnit_Framework_Test $test)
     {
-        $this->loader->load($this->path);
+        $data = $this->loader->load($this->thingToLoad);
+
+        foreach ($data as $table => $tableData) {
+            $this->truncator->truncate($table);
+            $this->persister->persist($table, $tableData);
+        }
     }
 }
