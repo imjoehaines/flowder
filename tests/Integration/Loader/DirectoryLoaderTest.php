@@ -5,7 +5,6 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
-use Imjoehaines\Flowder\Persister\PdoPersister;
 
 class DirectoryLoaderTest extends TestCase
 {
