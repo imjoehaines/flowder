@@ -44,23 +44,21 @@ abstract class PdoPersister implements PersisterInterface
 
         $values = array_merge(...array_map('array_values', $data));
 
-        $this->disableForeignKeys($table);
+        $this->disableForeignKeys();
 
         $statement = $this->db->prepare($query);
         $statement->execute($values);
 
-        $this->enableForeignKeys($table);
+        $this->enableForeignKeys();
     }
 
     /**
-     * @param string $table
      * @return void
      */
-    abstract protected function disableForeignKeys($table);
+    abstract protected function disableForeignKeys();
 
     /**
-     * @param string $table
      * @return void
      */
-    abstract protected function enableForeignKeys($table);
+    abstract protected function enableForeignKeys();
 }

@@ -5,19 +5,17 @@ namespace Imjoehaines\Flowder\Persister;
 final class SqlitePersister extends PdoPersister
 {
     /**
-     * @param string $table
      * @return void
      */
-    protected function disableForeignKeys($table)
+    protected function disableForeignKeys()
     {
         $this->db->exec('PRAGMA foreign_keys = OFF');
     }
 
     /**
-     * @param string $table
      * @return void
      */
-    protected function enableForeignKeys($table)
+    protected function enableForeignKeys()
     {
         $this->db->exec('PRAGMA foreign_keys = ON');
     }
