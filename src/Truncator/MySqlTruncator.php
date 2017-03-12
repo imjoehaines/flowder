@@ -27,6 +27,8 @@ class MySqlTruncator implements TruncatorInterface
      */
     public function truncate($table)
     {
+        $this->db->exec('SET foreign_key_checks = 0');
         $this->db->exec('TRUNCATE TABLE `' . $table . '`');
+        $this->db->exec('SET foreign_key_checks = 1');
     }
 }

@@ -28,6 +28,8 @@ class SqliteTruncator implements TruncatorInterface
      */
     public function truncate($table)
     {
+        $this->db->exec('PRAGMA foreign_keys = OFF');
+
         $this->db->exec('DELETE FROM `' . $table . '`');
 
         // reset the auto-increment value only if the sqlite_sequence table exists
@@ -45,5 +47,7 @@ class SqliteTruncator implements TruncatorInterface
             $statement = $this->db->prepare('DELETE FROM sqlite_sequence WHERE name = :table');
             $statement->execute(['table' => $table]);
         }
+
+        $this->db->exec('PRAGMA foreign_keys = ON');
     }
 }
