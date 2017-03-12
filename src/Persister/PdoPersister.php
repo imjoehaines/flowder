@@ -4,17 +4,17 @@ namespace Imjoehaines\Flowder\Persister;
 
 use PDO;
 
-final class PdoPersister implements PersisterInterface
+abstract class PdoPersister implements PersisterInterface
 {
     /**
      * @var PDO
      */
-    private $db;
+    protected $db;
 
     /**
      * @param PDO $db
      */
-    public function __construct(PDO $db)
+    final public function __construct(PDO $db)
     {
         $this->db = $db;
     }
@@ -24,9 +24,9 @@ final class PdoPersister implements PersisterInterface
      *
      * @param string $table
      * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
-     * @return bool
+     * @return void
      */
-    public function persist($table, array $data)
+    final public function persist($table, array $data)
     {
         $columns = array_keys(reset($data));
 
@@ -42,10 +42,25 @@ final class PdoPersister implements PersisterInterface
             $placeholders
         );
 
-        $statement = $this->db->prepare($query);
-
         $values = array_merge(...array_map('array_values', $data));
 
-        return $statement->execute($values);
+        $this->disableForeignKeys($table);
+
+        $statement = $this->db->prepare($query);
+        $statement->execute($values);
+
+        $this->enableForeignKeys($table);
     }
+
+    /**
+     * @param string $table
+     * @return void
+     */
+    abstract protected function disableForeignKeys($table);
+
+    /**
+     * @param string $table
+     * @return void
+     */
+    abstract protected function enableForeignKeys($table);
 }

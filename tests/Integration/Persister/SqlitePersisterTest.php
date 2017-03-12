@@ -4,9 +4,9 @@ namespace Imjoehaines\Flowder\Test\Integration\Persister;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\PdoPersister;
+use Imjoehaines\Flowder\Persister\SqlitePersister;
 
-class PdoPersisterTest extends TestCase
+class SqlitePersisterTest extends TestCase
 {
     public function testItRunsOneInsertForASingleRowOfData()
     {
@@ -19,17 +19,15 @@ class PdoPersisterTest extends TestCase
             column3 TEXT
         )');
 
-        $persister = new PdoPersister($db);
+        $persister = new SqlitePersister($db);
 
-        $actual = $persister->persist('test_table', [
+        $persister->persist('test_table', [
             [
                 'column1' => 1,
                 'column2' => 2,
                 'column3' => 'three',
             ],
         ]);
-
-        $this->assertTrue($actual);
 
         $statement = $db->prepare('SELECT * FROM test_table');
         $statement->execute();
@@ -58,9 +56,9 @@ class PdoPersisterTest extends TestCase
             column3 TEXT
         )');
 
-        $persister = new PdoPersister($db);
+        $persister = new SqlitePersister($db);
 
-        $actual = $persister->persist('test_table', [
+        $persister->persist('test_table', [
             [
                 'column1' => 1,
                 'column2' => 2,
@@ -77,8 +75,6 @@ class PdoPersisterTest extends TestCase
                 'column3' => 'nine',
             ],
         ]);
-
-        $this->assertTrue($actual);
 
         $statement = $db->prepare('SELECT * FROM test_table');
         $statement->execute();
@@ -100,6 +96,47 @@ class PdoPersisterTest extends TestCase
                     'column1' => '7',
                     'column2' => '8',
                     'column3' => 'nine',
+                ],
+            ],
+            $actual
+        );
+    }
+
+    public function testItCanHandleBrokenForeignKeys()
+    {
+        $db = new PDO('sqlite::memory:');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $db->exec('PRAGMA foreign_keys = ON');
+
+        $db->exec('CREATE TABLE IF NOT EXISTS test_table (
+            id INT PRIMARY KEY
+        )');
+
+        $db->exec('CREATE TABLE IF NOT EXISTS test_table_2 (
+            id INT PRIMARY KEY,
+            test_table_id INT,
+            FOREIGN KEY(test_table_id) REFERENCES test_table(id)
+        )');
+
+        $persister = new SqlitePersister($db);
+
+        $persister->persist('test_table_2', [
+            [
+                'id' => 1,
+                'test_table_id' => 1,
+            ],
+        ]);
+
+        $statement = $db->prepare('SELECT * FROM test_table_2');
+        $statement->execute();
+        $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $this->assertSame(
+            [
+                [
+                    'id' => '1',
+                    'test_table_id' => '1',
                 ],
             ],
             $actual
