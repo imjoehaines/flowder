@@ -2,14 +2,11 @@
 
 namespace Imjoehaines\Flowder;
 
-use PHPUnit_Framework_Test;
-use InvalidArgumentException;
-use PHPUnit\Framework\BaseTestListener;
 use Imjoehaines\Flowder\Loader\LoaderInterface;
 use Imjoehaines\Flowder\Persister\PersisterInterface;
 use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 
-class PhpUnitListener extends BaseTestListener
+class Flowder
 {
     public function __construct(
         $thingToLoad,
@@ -23,7 +20,7 @@ class PhpUnitListener extends BaseTestListener
         $this->persister = $persister;
     }
 
-    public function startTest(PHPUnit_Framework_Test $test)
+    public function loadFixtures()
     {
         $data = $this->loader->load($this->thingToLoad);
 

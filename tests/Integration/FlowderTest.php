@@ -3,15 +3,14 @@
 namespace Imjoehaines\Flowder\Test\Integration;
 
 use PDO;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\PhpUnitListener;
+use Imjoehaines\Flowder\Flowder;
 use Imjoehaines\Flowder\Loader\FileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Persister\PdoPersister;
 use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 
-class PhpUnitListenerTest extends TestCase
+class FlowderTest extends TestCase
 {
     public function testItLoadsFixturesFromAFileIfGivenThePathToAFile()
     {
@@ -28,14 +27,14 @@ class PhpUnitListenerTest extends TestCase
         $loader = new FileLoader();
         $persister = new PdoPersister($db);
 
-        $listener = new PhpUnitListener(
+        $flowder = new Flowder(
             __DIR__ . '/../data/loader_test_data.php',
             $truncator,
             $loader,
             $persister
         );
 
-        $listener->startTest($this);
+        $flowder->loadFixtures();
 
         $statement = $db->prepare('SELECT * FROM loader_test_data');
         $statement->execute();
@@ -78,19 +77,19 @@ class PhpUnitListenerTest extends TestCase
         $loader = new FileLoader();
         $persister = new PdoPersister($db);
 
-        $listener = new PhpUnitListener(
+        $flowder = new Flowder(
             __DIR__ . '/../data/loader_test_data.php',
             $truncator,
             $loader,
             $persister
         );
 
-        $listener->startTest($this);
+        $flowder->loadFixtures();
 
         // call start test multiple times to check that we can re-insert the same data
         // without getting primary key clashes
-        $listener->startTest($this);
-        $listener->startTest($this);
+        $flowder->loadFixtures();
+        $flowder->loadFixtures();
 
         $statement = $db->prepare('SELECT * FROM loader_test_data');
         $statement->execute();
@@ -146,14 +145,14 @@ class PhpUnitListenerTest extends TestCase
         $loader = new DirectoryLoader();
         $persister = new PdoPersister($db);
 
-        $listener = new PhpUnitListener(
+        $flowder = new Flowder(
             __DIR__ . '/../data/directory_loader_test',
             $truncator,
             $loader,
             $persister
         );
 
-        $listener->startTest($this);
+        $flowder->loadFixtures();
 
         $statement = $db->prepare('SELECT * FROM test_data_1');
         $statement->execute();
