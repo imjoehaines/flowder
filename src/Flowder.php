@@ -6,7 +6,7 @@ use Imjoehaines\Flowder\Loader\LoaderInterface;
 use Imjoehaines\Flowder\Persister\PersisterInterface;
 use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 
-class Flowder
+final class Flowder
 {
     /**
      * @param mixed $thingToLoad

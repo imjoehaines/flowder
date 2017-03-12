@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Persister;
 
 use PDO;
 
-class PdoPersister implements PersisterInterface
+final class PdoPersister implements PersisterInterface
 {
     /**
      * @var PDO

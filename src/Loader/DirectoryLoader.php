@@ -2,7 +2,7 @@
 
 namespace Imjoehaines\Flowder\Loader;
 
-class DirectoryLoader implements LoaderInterface
+final class DirectoryLoader implements LoaderInterface
 {
     /**
      * Load the given directory

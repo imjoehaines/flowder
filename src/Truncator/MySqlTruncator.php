@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Truncator;
 
 use PDO;
 
-class MySqlTruncator implements TruncatorInterface
+final class MySqlTruncator implements TruncatorInterface
 {
     /**
      * @var PDO

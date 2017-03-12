@@ -2,7 +2,7 @@
 
 namespace Imjoehaines\Flowder\Loader;
 
-class CachingLoader implements LoaderInterface
+final class CachingLoader implements LoaderInterface
 {
     /**
      * The array of cached data
