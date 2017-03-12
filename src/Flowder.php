@@ -8,6 +8,12 @@ use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 
 class Flowder
 {
+    /**
+     * @param mixed $thingToLoad
+     * @param TruncatorInterface $truncator
+     * @param LoaderInterface $loader
+     * @param PersisterInterface $persister
+     */
     public function __construct(
         $thingToLoad,
         TruncatorInterface $truncator,
@@ -20,6 +26,9 @@ class Flowder
         $this->persister = $persister;
     }
 
+    /**
+     * @return void
+     */
     public function loadFixtures()
     {
         $data = $this->loader->load($this->thingToLoad);

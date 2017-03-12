@@ -6,13 +6,25 @@ use PDO;
 
 class MySqlTruncator implements TruncatorInterface
 {
+    /**
+     * @var PDO
+     */
     private $db;
 
+    /**
+     * @param PDO $db
+     */
     public function __construct(PDO $db)
     {
         $this->db = $db;
     }
 
+    /**
+     * Truncate the given table
+     *
+     * @param string $table
+     * @return void
+     */
     public function truncate($table)
     {
         $this->db->exec('TRUNCATE TABLE `' . $table . '`');

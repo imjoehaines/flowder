@@ -4,6 +4,12 @@ namespace Imjoehaines\Flowder\Loader;
 
 class FileLoader implements LoaderInterface
 {
+    /**
+     * Loads the given PHP file that should return an array of data
+     *
+     * @param string $file
+     * @return array
+     */
     public function load($file)
     {
         $table = pathinfo($file, PATHINFO_FILENAME);

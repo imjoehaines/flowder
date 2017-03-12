@@ -23,7 +23,7 @@ class PdoPersister implements PersisterInterface
      * Persist an array of data
      *
      * @param string $table
-     * @param array $data
+     * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
      * @return bool
      */
     public function persist($table, array $data)

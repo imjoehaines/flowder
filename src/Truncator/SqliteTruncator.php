@@ -6,13 +6,26 @@ use PDO;
 
 class SqliteTruncator implements TruncatorInterface
 {
+    /**
+     * @var PDO
+     */
     private $db;
 
+    /**
+     * @param PDO $db
+     */
     public function __construct(PDO $db)
     {
         $this->db = $db;
     }
 
+    /**
+     * Delete all data from the given table, mimicking MySQL's `TRUNCATE` by
+     * resetting the auto-increment as well
+     *
+     * @param string $table
+     * @return void
+     */
     public function truncate($table)
     {
         $this->db->exec('DELETE FROM `' . $table . '`');
