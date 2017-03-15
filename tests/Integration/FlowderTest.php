@@ -142,7 +142,7 @@ class FlowderTest extends TestCase
 
 
         $truncator = new SqliteTruncator($db);
-        $loader = new DirectoryLoader();
+        $loader = new DirectoryLoader(new FileLoader());
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(

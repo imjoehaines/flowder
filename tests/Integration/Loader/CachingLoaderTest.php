@@ -63,7 +63,7 @@ class CachingLoaderTest extends TestCase
 
         $this->assertSame(0, FileRequireCounter::$count);
 
-        $directoryLoader = new DirectoryLoader();
+        $directoryLoader = new DirectoryLoader(new FileLoader());
         $loader = new CachingLoader($directoryLoader);
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');

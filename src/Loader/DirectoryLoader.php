@@ -5,6 +5,21 @@ namespace Imjoehaines\Flowder\Loader;
 final class DirectoryLoader implements LoaderInterface
 {
     /**
+     * A "real" loader instance that actually does the loading
+     *
+     * @var LoaderInterface
+     */
+    private $loader;
+
+    /**
+     * @param LoaderInterface $loader
+     */
+    public function __construct(LoaderInterface $loader)
+    {
+        $this->loader = $loader;
+    }
+
+    /**
      * Load the given directory
      *
      * @param string $directory
@@ -14,8 +29,8 @@ final class DirectoryLoader implements LoaderInterface
     {
         $phpFiles = glob(rtrim($directory, '/') . '/*.php');
 
-        $fileLoader = new FileLoader();
+        $loadedFiles = array_map([$this->loader, 'load'], $phpFiles);
 
-        return array_merge(...array_map([$fileLoader, 'load'], $phpFiles));
+        return array_merge(...$loadedFiles);
     }
 }
