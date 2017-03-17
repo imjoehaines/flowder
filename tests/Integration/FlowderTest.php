@@ -29,8 +29,8 @@ class FlowderTest extends TestCase
 
         $flowder = new Flowder(
             __DIR__ . '/../data/loader_test_data.php',
-            $truncator,
             $loader,
+            $truncator,
             $persister
         );
 
@@ -79,8 +79,8 @@ class FlowderTest extends TestCase
 
         $flowder = new Flowder(
             __DIR__ . '/../data/loader_test_data.php',
-            $truncator,
             $loader,
+            $truncator,
             $persister
         );
 
@@ -140,15 +140,14 @@ class FlowderTest extends TestCase
             column9 TEXT
         )');
 
-
         $truncator = new SqliteTruncator($db);
         $loader = new DirectoryLoader(new FileLoader());
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
             __DIR__ . '/../data/directory_loader_test',
-            $truncator,
             $loader,
+            $truncator,
             $persister
         );
 

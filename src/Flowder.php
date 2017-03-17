@@ -10,19 +10,19 @@ final class Flowder
 {
     /**
      * @param mixed $thingToLoad
-     * @param TruncatorInterface $truncator
      * @param LoaderInterface $loader
+     * @param TruncatorInterface $truncator
      * @param PersisterInterface $persister
      */
     public function __construct(
         $thingToLoad,
-        TruncatorInterface $truncator,
         LoaderInterface $loader,
+        TruncatorInterface $truncator,
         PersisterInterface $persister
     ) {
         $this->thingToLoad = $thingToLoad;
-        $this->truncator = $truncator;
         $this->loader = $loader;
+        $this->truncator = $truncator;
         $this->persister = $persister;
     }
 
