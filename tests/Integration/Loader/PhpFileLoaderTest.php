@@ -4,9 +4,9 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader\FileLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 
-class FileLoaderTest extends TestCase
+class PhpFileLoaderTest extends TestCase
 {
     public function testItLoadsFixturesFromAGivenFile()
     {
@@ -30,7 +30,7 @@ class FileLoaderTest extends TestCase
             ],
         ];
 
-        $loader = new FileLoader();
+        $loader = new PhpFileLoader();
         $actual = $loader->load(__DIR__ . '/../../data/loader_test_data.php');
 
         $this->assertSame($expected, $actual);

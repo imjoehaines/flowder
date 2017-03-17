@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader\FileLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\CachingLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Test\FileRequireCounter;
@@ -25,7 +25,7 @@ class CachingLoaderTest extends TestCase
 
         $this->assertSame(0, FileRequireCounter::$count);
 
-        $fileLoader = new FileLoader();
+        $fileLoader = new PhpFileLoader();
         $loader = new CachingLoader($fileLoader);
 
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
@@ -63,7 +63,7 @@ class CachingLoaderTest extends TestCase
 
         $this->assertSame(0, FileRequireCounter::$count);
 
-        $directoryLoader = new DirectoryLoader(new FileLoader());
+        $directoryLoader = new DirectoryLoader(new PhpFileLoader());
         $loader = new CachingLoader($directoryLoader);
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');

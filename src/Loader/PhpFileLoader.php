@@ -2,7 +2,7 @@
 
 namespace Imjoehaines\Flowder\Loader;
 
-final class FileLoader implements LoaderInterface
+final class PhpFileLoader implements LoaderInterface
 {
     /**
      * Loads the given PHP file that should return an array of data

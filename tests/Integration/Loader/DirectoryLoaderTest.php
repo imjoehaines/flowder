@@ -4,7 +4,7 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader\FileLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 
 class DirectoryLoaderTest extends TestCase
@@ -35,7 +35,7 @@ class DirectoryLoaderTest extends TestCase
             ],
         ];
 
-        $loader = new DirectoryLoader(new FileLoader());
+        $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test/');
 
         $this->assertSame($expected, $actual);
@@ -67,7 +67,7 @@ class DirectoryLoaderTest extends TestCase
             ],
         ];
 
-        $loader = new DirectoryLoader(new FileLoader());
+        $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test');
 
         $this->assertSame($expected, $actual);

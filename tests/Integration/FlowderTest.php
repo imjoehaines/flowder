@@ -5,7 +5,7 @@ namespace Imjoehaines\Flowder\Test\Integration;
 use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Flowder;
-use Imjoehaines\Flowder\Loader\FileLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Persister\SqlitePersister;
 use Imjoehaines\Flowder\Truncator\SqliteTruncator;
@@ -23,7 +23,7 @@ class FlowderTest extends TestCase
             column3 TEXT
         )');
 
-        $loader = new FileLoader();
+        $loader = new PhpFileLoader();
         $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
@@ -73,7 +73,7 @@ class FlowderTest extends TestCase
             column3 TEXT
         )');
 
-        $loader = new FileLoader();
+        $loader = new PhpFileLoader();
         $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
@@ -140,7 +140,7 @@ class FlowderTest extends TestCase
             column9 TEXT
         )');
 
-        $loader = new DirectoryLoader(new FileLoader());
+        $loader = new DirectoryLoader(new PhpFileLoader());
         $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
