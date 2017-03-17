@@ -29,11 +29,11 @@ For example, to load a single PHP file into a SQLite in-memory database, the fol
 ```php
 $db = new PDO('sqlite::memory:');
 
-$flowder = new \Imjoehaines\Flowder\Flowder(
+$flowder = new Imjoehaines\Flowder\Flowder(
     'test_data.php',
-    new \Imjoehaines\Flowder\Loader\PhpFileLoader(),
-    new \Imjoehaines\Flowder\Truncator\SqliteTruncator($db),
-    new \Imjoehaines\Flowder\Persister\SqlitePersister($db)
+    new Imjoehaines\Flowder\Loader\PhpFileLoader(),
+    new Imjoehaines\Flowder\Truncator\SqliteTruncator($db),
+    new Imjoehaines\Flowder\Persister\SqlitePersister($db)
 );
 
 $flowder->loadFixtures();
