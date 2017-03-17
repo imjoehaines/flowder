@@ -23,8 +23,8 @@ class FlowderTest extends TestCase
             column3 TEXT
         )');
 
-        $truncator = new SqliteTruncator($db);
         $loader = new FileLoader();
+        $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
@@ -73,8 +73,8 @@ class FlowderTest extends TestCase
             column3 TEXT
         )');
 
-        $truncator = new SqliteTruncator($db);
         $loader = new FileLoader();
+        $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
@@ -140,8 +140,8 @@ class FlowderTest extends TestCase
             column9 TEXT
         )');
 
-        $truncator = new SqliteTruncator($db);
         $loader = new DirectoryLoader(new FileLoader());
+        $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
