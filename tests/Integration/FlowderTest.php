@@ -140,7 +140,7 @@ class FlowderTest extends TestCase
             column9 TEXT
         )');
 
-        $loader = new DirectoryLoader(new PhpFileLoader());
+        $loader = new DirectoryLoader(new PhpFileLoader(), '.php');
         $truncator = new SqliteTruncator($db);
         $persister = new SqlitePersister($db);
 
