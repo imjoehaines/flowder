@@ -146,4 +146,4 @@ The `MySqlPersister` takes a table name and array of data and converts it into a
 
 #### SqlitePersister
 
-The `SqlitePersister` is identical to the `MySqlPersister` and only exists because MySQL and SQLite have a different syntax to enable and disable foreign keys.
+The `SqlitePersister` is functionally identical to the `MySqlPersister`, but inserts data a row at a time inside a transaction instead of building a single `INSERT` query. This is to get around SQLite's [`SQLITE_MAX_VARIABLE_NUMBER`](https://www.sqlite.org/lang_expr.html#varparam) limitation.
