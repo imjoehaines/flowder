@@ -33,6 +33,6 @@ class PhpFileLoaderTest extends TestCase
         $loader = new PhpFileLoader();
         $actual = $loader->load(__DIR__ . '/../../data/loader_test_data.php');
 
-        $this->assertSame($expected, $actual);
+        $this->assertSame($expected, iterator_to_array($actual));
     }
 }

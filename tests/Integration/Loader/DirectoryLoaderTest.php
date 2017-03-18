@@ -38,7 +38,7 @@ class DirectoryLoaderTest extends TestCase
         $loader = new DirectoryLoader(new PhpFileLoader(), '.php');
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test/');
 
-        $this->assertSame($expected, $actual);
+        $this->assertSame($expected, iterator_to_array($actual));
     }
 
     public function testItLoadsFixturesFromAGivenDirectoryWithoutTrailingSlash()
@@ -70,6 +70,6 @@ class DirectoryLoaderTest extends TestCase
         $loader = new DirectoryLoader(new PhpFileLoader(), '.php');
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test');
 
-        $this->assertSame($expected, $actual);
+        $this->assertSame($expected, iterator_to_array($actual));
     }
 }

@@ -36,10 +36,12 @@ final class DirectoryLoader implements LoaderInterface
     {
         $globPattern = sprintf('%s/*%s', rtrim($directory, '/'), $this->extension);
 
-        $phpFiles = glob($globPattern);
+        $files = glob($globPattern);
 
-        $loadedFiles = array_map([$this->loader, 'load'], $phpFiles);
-
-        return array_merge(...$loadedFiles);
+        foreach ($files as $file) {
+            foreach ($this->loader->load($file) as $table => $data) {
+                yield $table => $data;
+            }
+        }
     }
 }

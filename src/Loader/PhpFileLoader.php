@@ -16,6 +16,6 @@ final class PhpFileLoader implements LoaderInterface
 
         $data = require $file;
 
-        return [$table => $data];
+        yield $table => $data;
     }
 }
