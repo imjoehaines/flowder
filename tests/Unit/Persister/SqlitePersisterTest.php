@@ -23,10 +23,8 @@ class SqlitePersisterTest extends TestCase
             'INSERT INTO `table_name` (`column1`, `column2`) VALUES (?, ?)'
         )->shouldBeCalled()->willReturn($statement->reveal());
 
-        $db->exec('COMMIT TRANSACTION')->shouldBeCalled();
-        $db->exec('PRAGMA foreign_keys = ON')
-            ->shouldBeCalled()
-            ->willThrow(new PDOException('nope'));
+        $db->exec('COMMIT TRANSACTION')->shouldBeCalled()->willThrow(new PDOException('nope'));
+        $db->exec('PRAGMA foreign_keys = ON')->shouldNotBeCalled();
 
         $db->exec('ROLLBACK')->shouldBeCalled();
 

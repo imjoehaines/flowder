@@ -44,8 +44,9 @@ final class SqlitePersister implements PersisterInterface
 
         $values = array_map('array_values', $data);
 
+        $this->db->exec('PRAGMA foreign_keys = OFF');
+
         try {
-            $this->db->exec('PRAGMA foreign_keys = OFF');
             $this->db->exec('BEGIN TRANSACTION');
 
             $statement = $this->db->prepare($query);
@@ -55,11 +56,12 @@ final class SqlitePersister implements PersisterInterface
             }
 
             $this->db->exec('COMMIT TRANSACTION');
-            $this->db->exec('PRAGMA foreign_keys = ON');
         } catch (Exception $e) {
             $this->db->exec('ROLLBACK');
 
             throw $e;
         }
+
+        $this->db->exec('PRAGMA foreign_keys = ON');
     }
 }
