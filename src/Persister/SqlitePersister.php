@@ -8,15 +8,6 @@ use Exception;
 final class SqlitePersister implements PersisterInterface
 {
     /**
-     * The SQLite internal value for the maximum number of parameters that can
-     * be used in a single query
-     *
-     * @see https://www.sqlite.org/c3ref/c_limit_attached.html
-     * @var int
-     */
-    const SQLITE_LIMIT_VARIABLE_NUMBER = 9;
-
-    /**
      * @var PDO
      */
     protected $db;
