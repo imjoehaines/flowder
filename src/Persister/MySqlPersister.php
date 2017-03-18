@@ -14,7 +14,7 @@ final class MySqlPersister implements PersisterInterface
     /**
      * @param PDO $db
      */
-    final public function __construct(PDO $db)
+    public function __construct(PDO $db)
     {
         $this->db = $db;
     }
