@@ -35,8 +35,6 @@ final class CachingLoader implements LoaderInterface
     public function load($thingToLoad)
     {
         if (empty($this->cache[$thingToLoad])) {
-            $this->cache[$thingToLoad] = [];
-
             foreach ($this->loader->load($thingToLoad) as $table => $data) {
                 $this->cache[$thingToLoad][$table] = $data;
 
