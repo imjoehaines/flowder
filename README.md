@@ -1,4 +1,4 @@
-# Flowder
+# Flowder [![Build Status](https://travis-ci.org/imjoehaines/flowder.svg?branch=master)](https://travis-ci.org/imjoehaines/flowder) [![codecov](https://codecov.io/gh/imjoehaines/flowder/branch/master/graph/badge.svg)](https://codecov.io/gh/imjoehaines/flowder)
 
 Flowder is a (really) simple fixture loader for PHP 5.6+, supporting SQLite and MySQL.
 
