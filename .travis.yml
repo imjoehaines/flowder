@@ -9,7 +9,10 @@ before_script:
   - composer install
 
 script:
-  - composer test
+  - composer test:coverage
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
 
 matrix:
   fast_finish: true

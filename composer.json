@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "test": "phpunit tests/"
+        "test": "phpunit tests/",
+        "test:coverage": "phpunit tests/ --coverage-clover=coverage.xml"
     },
     "config": {
       "platform": {
