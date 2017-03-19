@@ -9,10 +9,8 @@ before_script:
   - composer install
 
 script:
-  - composer test:coverage
-
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
+  - vendor/bin/phpunit tests/Unit --coverage-clover=coverage.xml && bash <(curl -s https://codecov.io/bash) -c -F unit
+  - vendor/bin/phpunit tests/Integration --coverage-clover=coverage.xml && bash <(curl -s https://codecov.io/bash) -c -F integration
 
 matrix:
   fast_finish: true
