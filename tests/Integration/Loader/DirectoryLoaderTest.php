@@ -12,6 +12,7 @@ class DirectoryLoaderTest extends TestCase
     public function testItLoadsFixturesFromAGivenDirectory()
     {
         $expected = [
+            'empty' => [],
             'test_data_1' => [
                 [
                     'column1' => 1,
@@ -44,6 +45,7 @@ class DirectoryLoaderTest extends TestCase
     public function testItLoadsFixturesFromAGivenDirectoryWithoutTrailingSlash()
     {
         $expected = [
+            'empty' => [],
             'test_data_1' => [
                 [
                     'column1' => 1,

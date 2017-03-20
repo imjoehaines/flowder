@@ -122,6 +122,8 @@ class FlowderTest extends TestCase
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        $db->exec('CREATE TABLE IF NOT EXISTS empty (column1 INT PRIMARY KEY)');
+
         $db->exec('CREATE TABLE IF NOT EXISTS test_data_1 (
             column1 INT PRIMARY KEY,
             column2 INT,

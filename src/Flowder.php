@@ -35,7 +35,10 @@ final class Flowder
 
         foreach ($data as $table => $tableData) {
             $this->truncator->truncate($table);
-            $this->persister->persist($table, $tableData);
+
+            if (!empty($tableData)) {
+                $this->persister->persist($table, $tableData);
+            }
         }
     }
 }
