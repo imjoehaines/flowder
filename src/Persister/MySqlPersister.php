@@ -35,8 +35,7 @@ final class MySqlPersister implements PersisterInterface
         $placeholders = implode('), (', array_fill(0, count($data), $rowPlaceholders));
 
         $query = sprintf(
-            'INSERT INTO `%s` (`%s`)
-                  VALUES (%s)',
+            'INSERT INTO `%s` (`%s`) VALUES (%s)',
             $table,
             implode('`, `', $columns),
             $placeholders

@@ -19,8 +19,7 @@ class MySqlPersisterTest extends TestCase
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
         $db->prepare(
-            'INSERT INTO `table_name` (`column1`, `column2`)
-                  VALUES (?, ?)'
+            'INSERT INTO `table_name` (`column1`, `column2`) VALUES (?, ?)'
         )->shouldBeCalled()->willReturn($statement->reveal());
 
         $db->exec('SET foreign_key_checks = 1')->shouldBeCalled();
@@ -51,8 +50,7 @@ class MySqlPersisterTest extends TestCase
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
         $db->prepare(
-            'INSERT INTO `table_name` (`column1`, `column2`)
-                  VALUES (?, ?), (?, ?), (?, ?), (?, ?)'
+            'INSERT INTO `table_name` (`column1`, `column2`) VALUES (?, ?), (?, ?), (?, ?), (?, ?)'
         )->shouldBeCalled()->willReturn($statement->reveal());
 
         $db->exec('SET foreign_key_checks = 1')->shouldBeCalled();
