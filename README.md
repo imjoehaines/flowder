@@ -75,7 +75,6 @@ return [
         'column2' => 5,
     ],
 ];
-
 ```
 
 Then when loaded with the `PhpFileLoader`, it would return the following PHP array
