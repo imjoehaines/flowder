@@ -2,6 +2,11 @@
 
 Flowder is a (really) simple fixture loader for PHP 5.6+, supporting SQLite and MySQL.
 
+**NB:** If you're looking to use Flowder in a project, you probably want to use an exisiting framework integration:
+
+- [Flowdception](https://github.com/imjoehaines/flowdception) — A Flowder Extension for Codception
+- Flowder PHPUnit — A Flowder test listener for PHPUnit (coming soon)
+
 ## Basic Concepts
 
 Flowder is built with three basic building blocks; Loaders, Truncators and Persisters.
