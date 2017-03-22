@@ -27,7 +27,8 @@
       }
     },
     "suggest": {
-        "imjoehaines/flowdception": "Support for Flowder in Codeception test suites"
+        "imjoehaines/flowdception": "Support for Flowder in Codeception test suites",
+        "imjoehaines/flowder-phpunit": "Support for Flowder in PHPUnit test suites"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0"
