@@ -11,7 +11,7 @@ interface PersisterInterface
      *
      * @param string $table
      * @param array $data
-     * @return bool
+     * @return void
      */
     public function persist($table, array $data);
 }

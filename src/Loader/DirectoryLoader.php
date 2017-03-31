@@ -30,7 +30,7 @@ final class DirectoryLoader implements LoaderInterface
      * Load the given directory
      *
      * @param string $directory
-     * @return array
+     * @return iterable
      */
     public function load($directory)
     {
