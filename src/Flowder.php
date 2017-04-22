@@ -9,29 +9,27 @@ use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 final class Flowder
 {
     /**
-     * @param mixed $thingToLoad
      * @param LoaderInterface $loader
      * @param TruncatorInterface $truncator
      * @param PersisterInterface $persister
      */
     public function __construct(
-        $thingToLoad,
         LoaderInterface $loader,
         TruncatorInterface $truncator,
         PersisterInterface $persister
     ) {
-        $this->thingToLoad = $thingToLoad;
         $this->loader = $loader;
         $this->truncator = $truncator;
         $this->persister = $persister;
     }
 
     /**
+     * @param mixed $thingToLoad
      * @return void
      */
-    public function loadFixtures()
+    public function loadFixtures($thingToLoad)
     {
-        $data = $this->loader->load($this->thingToLoad);
+        $data = $this->loader->load($thingToLoad);
 
         foreach ($data as $table => $tableData) {
             $this->truncator->truncate($table);

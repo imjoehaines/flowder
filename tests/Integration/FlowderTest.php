@@ -28,13 +28,12 @@ class FlowderTest extends TestCase
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
-            __DIR__ . '/../data/loader_test_data.php',
             $loader,
             $truncator,
             $persister
         );
 
-        $flowder->loadFixtures();
+        $flowder->loadFixtures(__DIR__ . '/../data/loader_test_data.php');
 
         $statement = $db->prepare('SELECT * FROM loader_test_data');
         $statement->execute();
@@ -78,18 +77,17 @@ class FlowderTest extends TestCase
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
-            __DIR__ . '/../data/loader_test_data.php',
             $loader,
             $truncator,
             $persister
         );
 
-        $flowder->loadFixtures();
+        $flowder->loadFixtures(__DIR__ . '/../data/loader_test_data.php');
 
         // call start test multiple times to check that we can re-insert the same data
         // without getting primary key clashes
-        $flowder->loadFixtures();
-        $flowder->loadFixtures();
+        $flowder->loadFixtures(__DIR__ . '/../data/loader_test_data.php');
+        $flowder->loadFixtures(__DIR__ . '/../data/loader_test_data.php');
 
         $statement = $db->prepare('SELECT * FROM loader_test_data');
         $statement->execute();
@@ -147,13 +145,12 @@ class FlowderTest extends TestCase
         $persister = new SqlitePersister($db);
 
         $flowder = new Flowder(
-            __DIR__ . '/../data/directory_loader_test',
             $loader,
             $truncator,
             $persister
         );
 
-        $flowder->loadFixtures();
+        $flowder->loadFixtures(__DIR__ . '/../data/directory_loader_test');
 
         $statement = $db->prepare('SELECT * FROM test_data_1');
         $statement->execute();
