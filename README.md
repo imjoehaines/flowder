@@ -1,4 +1,4 @@
-# Flowder [![Build Status](https://travis-ci.org/imjoehaines/flowder.svg?branch=master)](https://travis-ci.org/imjoehaines/flowder) [![codecov](https://codecov.io/gh/imjoehaines/flowder/branch/master/graph/badge.svg)](https://codecov.io/gh/imjoehaines/flowder)
+# Flowder [![Latest Stable Version](https://poser.pugx.org/imjoehaines/flowder/v/stable)](https://packagist.org/packages/imjoehaines/flowder) [![Build Status](https://travis-ci.org/imjoehaines/flowder.svg?branch=master)](https://travis-ci.org/imjoehaines/flowder) [![codecov](https://codecov.io/gh/imjoehaines/flowder/branch/master/graph/badge.svg)](https://codecov.io/gh/imjoehaines/flowder)
 
 Flowder is a (really) simple fixture loader for PHP 5.6+, supporting SQLite and MySQL.
 
