@@ -35,13 +35,12 @@ For example, to load a single PHP file into a SQLite in-memory database, the fol
 $db = new PDO('sqlite::memory:');
 
 $flowder = new Imjoehaines\Flowder\Flowder(
-    'test_data.php',
     new Imjoehaines\Flowder\Loader\PhpFileLoader(),
     new Imjoehaines\Flowder\Truncator\SqliteTruncator($db),
     new Imjoehaines\Flowder\Persister\SqlitePersister($db)
 );
 
-$flowder->loadFixtures();
+$flowder->loadFixtures('test_data.php');
 ```
 
 ## Provided Classes
@@ -50,9 +49,9 @@ $flowder->loadFixtures();
 
 `Flowder` is the main class you will be using. It is responsible for orchestrating the loading, truncating and persisting processes.
 
-As seen in the example above, it is constructed with four arguments &mdash; a thing to load, an instance of `LoaderInterface`, an instance of `TruncatorInterface` and an instance of `PersisterInterface`.
+As seen in the example above, it is constructed with three arguments &mdash; an instance of `LoaderInterface`, an instance of `TruncatorInterface` and an instance of `PersisterInterface`.
 
-After construction, call `loadFixtures` to load and persist the data.
+After construction, call `loadFixtures` and pass it a thing to load in order to persist the data. For example, using the `PhpFileLoader` you would pass `loadFixtures` the path to a PHP file.
 
 ### Loaders
 
