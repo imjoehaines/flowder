@@ -129,6 +129,13 @@ for ($i = 0; $i < 100; $i++) {
 
 It is usually a good idea to use the CachingLoader whenever you are loading the same resource more than once as it can dramatically speed up fixture loading.
 
+#### Additional Loaders
+
+For loading file formats other than PHP, take a look at the JSON or YAML loaders:
+
+- [JSON Loader](https://github.com/imjoehaines/flowder-json-loader)
+- [YAML Loader](https://github.com/imjoehaines/flowder-yaml-loader)
+
 ### Truncators
 
 Flowder comes with two Truncator classes:
