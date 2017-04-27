@@ -12,18 +12,11 @@ final class DirectoryLoader implements LoaderInterface
     private $loader;
 
     /**
-     * @var string
-     */
-    private $extension;
-
-    /**
      * @param LoaderInterface $loader
-     * @param string $extension
      */
-    public function __construct(LoaderInterface $loader, $extension)
+    public function __construct(LoaderInterface $loader)
     {
         $this->loader = $loader;
-        $this->extension = $extension;
     }
 
     /**
@@ -34,7 +27,7 @@ final class DirectoryLoader implements LoaderInterface
      */
     public function load($directory)
     {
-        $globPattern = sprintf('%s/*%s', rtrim($directory, '/'), $this->extension);
+        $globPattern = rtrim($directory, '/') . '/*';
 
         $files = glob($globPattern);
 

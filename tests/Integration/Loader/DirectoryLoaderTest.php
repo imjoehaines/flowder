@@ -36,7 +36,7 @@ class DirectoryLoaderTest extends TestCase
             ],
         ];
 
-        $loader = new DirectoryLoader(new PhpFileLoader(), '.php');
+        $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test/');
 
         $this->assertSame($expected, iterator_to_array($actual));
@@ -69,7 +69,7 @@ class DirectoryLoaderTest extends TestCase
             ],
         ];
 
-        $loader = new DirectoryLoader(new PhpFileLoader(), '.php');
+        $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test');
 
         $this->assertSame($expected, iterator_to_array($actual));

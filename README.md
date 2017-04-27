@@ -95,14 +95,13 @@ Then when loaded with the `PhpFileLoader`, it would return the following PHP arr
 
 #### DirectoryLoader
 
-The `DirectoryLoader` is a decorator around another Loader instance that will run the Loader's `load` method for each file of a given file extension in the directory provided to `DirectoryLoader::load`.
+The `DirectoryLoader` is a decorator around another Loader instance that will run the Loader's `load` method for each file in the directory provided to `DirectoryLoader::load`.
 
-For example, the following code will load all PHP files in `/some/directory` using the `PhpFileLoader`
+For example, the following code will load all files in `/some/directory` using the `PhpFileLoader`
 
 ```php
 $loader = new DirectoryLoader(
-    new PhpFileLoader(),
-    '.php' // note the leading period!
+    new PhpFileLoader()
 );
 
 $data = $loader->load('/some/directory');
@@ -112,13 +111,12 @@ $data = $loader->load('/some/directory');
 
 The `CachingLoader` is another decorator that caches the result of it's `load` method so that repeated calls to load the same thing will return the same result as it did on the first call to `load`.
 
-Extending the above example, we can use the following code to load all PHP files in `/some/directory` using the `PhpFileLoader`, but only actually hit the disk on the first time through the `for` loop. All other iterations will simply return the cached value
+Extending the above example, we can use the following code to load all files in `/some/directory` using the `PhpFileLoader`, but only actually hit the disk on the first time through the `for` loop. All other iterations will simply return the cached value
 
 ```php
 $loader = new CachingLoader(
     new DirectoryLoader(
-        new PhpFileLoader(),
-        '.php'
+        new PhpFileLoader()
     )
 );
 
