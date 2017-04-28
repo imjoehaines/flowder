@@ -9,7 +9,7 @@ Flowder is a (really) simple fixture loader for PHP 5.6+, supporting SQLite and 
 
 ## Basic Concepts
 
-Flowder is built with three basic building blocks; Loaders, Truncators and Persisters.
+Flowder is built with three basic building blocks; [Loaders](#loaders), [Truncators](#truncators) and [Persisters](#persisters).
 
 A Loader is responsible for taking a thing to load (such as a file or directory) and converting it into an array of data that can be persisted.
 
