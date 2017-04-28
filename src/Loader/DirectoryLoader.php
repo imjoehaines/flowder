@@ -27,7 +27,7 @@ final class DirectoryLoader implements LoaderInterface
      */
     public function load($directory)
     {
-        $globPattern = rtrim($directory, '/') . '/*';
+        $globPattern = $directory . '/*';
 
         $files = glob($globPattern);
 
