@@ -28,9 +28,7 @@ final class DirectoryLoader implements LoaderInterface
     public function load($directory): iterable
     {
         foreach (glob($directory . '/*') as $file) {
-            foreach ($this->loader->load($file) as $table => $data) {
-                yield $table => $data;
-            }
+            yield from $this->loader->load($file);
         }
     }
 }

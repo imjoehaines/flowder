@@ -34,16 +34,14 @@ final class CachingLoader implements LoaderInterface
      */
     public function load($thingToLoad): iterable
     {
-        if (empty($this->cache[$thingToLoad])) {
+        if (!array_key_exists($thingToLoad, $this->cache)) {
             foreach ($this->loader->load($thingToLoad) as $table => $data) {
                 $this->cache[$thingToLoad][$table] = $data;
 
                 yield $table => $data;
             }
         } else {
-            foreach ($this->cache[$thingToLoad] as $table => $data) {
-                yield $table => $data;
-            }
+            yield from $this->cache[$thingToLoad];
         }
     }
 }
