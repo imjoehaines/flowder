@@ -8,7 +8,7 @@ interface LoaderInterface
      * Load the given thing and return an iterable with data
      *
      * @param mixed $thingToLoad
-     * @return iterable
+     * @return iterable<mixed>
      */
     public function load($thingToLoad): iterable;
 }

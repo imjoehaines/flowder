@@ -5,6 +5,7 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
+use Traversable;
 
 final class DirectoryLoaderTest extends TestCase
 {
@@ -38,6 +39,7 @@ final class DirectoryLoaderTest extends TestCase
         $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test/');
 
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
     }
 
@@ -71,6 +73,7 @@ final class DirectoryLoaderTest extends TestCase
         $loader = new DirectoryLoader(new PhpFileLoader());
         $actual = $loader->load(__DIR__ . '/../../data/directory_loader_test');
 
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
     }
 }

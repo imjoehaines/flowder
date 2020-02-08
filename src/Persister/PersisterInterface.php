@@ -8,7 +8,7 @@ interface PersisterInterface
      * Persist an array of data
      *
      * @param string $table
-     * @param array $data
+     * @param array<mixed> $data
      * @return void
      */
     public function persist(string $table, array $data): void;

@@ -30,7 +30,7 @@ final class CachingLoader implements LoaderInterface
      * Load the given thing and cache the results for repeated calls
      *
      * @param mixed $thingToLoad
-     * @return iterable
+     * @return iterable<string, iterable>
      */
     public function load($thingToLoad): iterable
     {

@@ -23,7 +23,7 @@ final class MySqlPersister implements PersisterInterface
      * Persist an array of data
      *
      * @param string $table
-     * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
+     * @param array<array<string, string|int|float|null>> $data in the format `[['column' => 'value'], ...]`
      * @return void
      */
     public function persist(string $table, array $data): void

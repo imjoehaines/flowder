@@ -7,6 +7,7 @@ use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\CachingLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Test\FileRequireCounter;
+use Traversable;
 
 final class CachingLoaderTest extends TestCase
 {
@@ -28,16 +29,20 @@ final class CachingLoaderTest extends TestCase
         $loader = new CachingLoader($fileLoader);
 
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         // re-load the data and check that the FileRequireCounter doesn't increment
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $actual = $loader->load(__DIR__ . '/../../data/cache/cache_test_data.php');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $this->assertSame(1, FileRequireCounter::$count);
@@ -66,16 +71,20 @@ final class CachingLoaderTest extends TestCase
         $loader = new CachingLoader($directoryLoader);
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         // re-load the data and check that the FileRequireCounter doesn't increment
         $actual = $loader->load(__DIR__ . '/../../data/cache');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $actual = $loader->load(__DIR__ . '/../../data/cache');
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
 
         $this->assertSame(2, FileRequireCounter::$count);

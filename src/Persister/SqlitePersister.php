@@ -27,7 +27,7 @@ final class SqlitePersister implements PersisterInterface
      * a separate insert per row of data inside a transaction
      *
      * @param string $table
-     * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
+     * @param array<array<string, string|int|float|null>> $data in the format `[['column' => 'value'], ...]`
      * @return void
      */
     public function persist(string $table, array $data): void

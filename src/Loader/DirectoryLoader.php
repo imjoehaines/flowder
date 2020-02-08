@@ -23,7 +23,7 @@ final class DirectoryLoader implements LoaderInterface
      * Load the given directory
      *
      * @param string $directory
-     * @return iterable
+     * @return iterable<string, iterable>
      */
     public function load($directory): iterable
     {

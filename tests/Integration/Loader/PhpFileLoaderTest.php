@@ -4,6 +4,7 @@ namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
+use Traversable;
 
 final class PhpFileLoaderTest extends TestCase
 {
@@ -32,6 +33,7 @@ final class PhpFileLoaderTest extends TestCase
         $loader = new PhpFileLoader();
         $actual = $loader->load(__DIR__ . '/../../data/loader_test_data.php');
 
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
     }
 }

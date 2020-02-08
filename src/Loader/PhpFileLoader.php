@@ -8,7 +8,7 @@ final class PhpFileLoader implements LoaderInterface
      * Loads the given PHP file that should return an iterable with data
      *
      * @param string $file
-     * @return iterable
+     * @return iterable<string, iterable>
      */
     public function load($file): iterable
     {
