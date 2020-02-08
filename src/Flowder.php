@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder;
 
@@ -27,7 +27,7 @@ final class Flowder
      * @param mixed $thingToLoad
      * @return void
      */
-    public function loadFixtures($thingToLoad)
+    public function loadFixtures($thingToLoad): void
     {
         $data = $this->loader->load($thingToLoad);
 

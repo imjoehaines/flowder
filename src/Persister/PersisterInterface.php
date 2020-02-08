@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Persister;
-
-use PDO;
 
 interface PersisterInterface
 {
@@ -13,5 +11,5 @@ interface PersisterInterface
      * @param array $data
      * @return void
      */
-    public function persist($table, array $data);
+    public function persist(string $table, array $data): void;
 }

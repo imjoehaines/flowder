@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Loader;
 
@@ -10,7 +10,7 @@ final class PhpFileLoader implements LoaderInterface
      * @param string $file
      * @return iterable
      */
-    public function load($file)
+    public function load($file): iterable
     {
         $table = pathinfo($file, PATHINFO_FILENAME);
 

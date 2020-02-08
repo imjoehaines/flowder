@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Truncator;
 
@@ -25,7 +25,7 @@ final class SqliteTruncator implements TruncatorInterface
      * @param string $table
      * @return void
      */
-    public function truncate($table)
+    public function truncate(string $table): void
     {
         $this->db->exec('PRAGMA foreign_keys = OFF');
         $this->db->exec('DELETE FROM `' . $table . '`');

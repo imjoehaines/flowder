@@ -1,17 +1,16 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Unit\Persister;
 
 use PDO;
 use PDOException;
 use PDOStatement;
-use Prophecy\Prophet;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Persister\SqlitePersister;
 
-class SqlitePersisterTest extends TestCase
+final class SqlitePersisterTest extends TestCase
 {
-    public function testItRollsbackUponError()
+    public function testItRollsbackUponError(): void
     {
         $db = $this->prophesize(PDO::class);
         $statement = $this->prophesize(PDOStatement::class);

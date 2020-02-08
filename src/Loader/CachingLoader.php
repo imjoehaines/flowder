@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Loader;
 
@@ -32,7 +32,7 @@ final class CachingLoader implements LoaderInterface
      * @param mixed $thingToLoad
      * @return iterable
      */
-    public function load($thingToLoad)
+    public function load($thingToLoad): iterable
     {
         if (empty($this->cache[$thingToLoad])) {
             foreach ($this->loader->load($thingToLoad) as $table => $data) {

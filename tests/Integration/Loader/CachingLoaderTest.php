@@ -1,17 +1,16 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\CachingLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Test\FileRequireCounter;
 
-class CachingLoaderTest extends TestCase
+final class CachingLoaderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAGivenFileAndCachesTheResult()
+    public function testItLoadsFixturesFromAGivenFileAndCachesTheResult(): void
     {
         FileRequireCounter::reset();
 
@@ -44,7 +43,7 @@ class CachingLoaderTest extends TestCase
         $this->assertSame(1, FileRequireCounter::$count);
     }
 
-    public function testItLoadsFixturesFromAGivenDirectoryAndCachesTheResult()
+    public function testItLoadsFixturesFromAGivenDirectoryAndCachesTheResult(): void
     {
         FileRequireCounter::reset();
 

@@ -1,14 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
 
-class PhpFileLoaderTest extends TestCase
+final class PhpFileLoaderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAGivenFile()
+    public function testItLoadsFixturesFromAGivenFile(): void
     {
         $expected = [
             'loader_test_data' => [

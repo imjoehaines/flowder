@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration;
 
@@ -10,9 +10,9 @@ use Imjoehaines\Flowder\Loader\DirectoryLoader;
 use Imjoehaines\Flowder\Persister\SqlitePersister;
 use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 
-class FlowderTest extends TestCase
+final class FlowderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAFileIfGivenThePathToAFile()
+    public function testItLoadsFixturesFromAFileIfGivenThePathToAFile(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -61,7 +61,7 @@ class FlowderTest extends TestCase
         );
     }
 
-    public function testItTruncatesDataBeforeInsertingAgain()
+    public function testItTruncatesDataBeforeInsertingAgain(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -115,7 +115,7 @@ class FlowderTest extends TestCase
         );
     }
 
-    public function testItLoadsFixturesFromADirectoryIfGivenThePathToADirectory()
+    public function testItLoadsFixturesFromADirectoryIfGivenThePathToADirectory(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

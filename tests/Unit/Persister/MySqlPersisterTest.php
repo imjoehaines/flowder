@@ -1,16 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Unit\Persister;
 
 use PDO;
 use PDOStatement;
-use Prophecy\Prophet;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Persister\MySqlPersister;
 
-class MySqlPersisterTest extends TestCase
+final class MySqlPersisterTest extends TestCase
 {
-    public function testItRunsOneInsertForASingleRowOfData()
+    public function testItRunsOneInsertForASingleRowOfData(): void
     {
         $db = $this->prophesize(PDO::class);
         $statement = $this->prophesize(PDOStatement::class);
@@ -38,7 +37,7 @@ class MySqlPersisterTest extends TestCase
         ]);
     }
 
-    public function testItRunsOneInsertForMultipleRowsOfData()
+    public function testItRunsOneInsertForMultipleRowsOfData(): void
     {
         $db = $this->prophesize(PDO::class);
         $statement = $this->prophesize(PDOStatement::class);

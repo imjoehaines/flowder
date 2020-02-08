@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Truncator;
 
@@ -10,5 +10,5 @@ interface TruncatorInterface
      * @param string $table
      * @return void
      */
-    public function truncate($table);
+    public function truncate(string $table): void;
 }

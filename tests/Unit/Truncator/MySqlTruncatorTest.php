@@ -1,15 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Truncator;
 
 use PDO;
-use Prophecy\Prophet;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Truncator\MySqlTruncator;
 
-class MySqlTruncatorTest extends TestCase
+final class MySqlTruncatorTest extends TestCase
 {
-    public function testItTruncatesAGivenTable()
+    public function testItTruncatesAGivenTable(): void
     {
         $db = $this->prophesize(PDO::class);
 

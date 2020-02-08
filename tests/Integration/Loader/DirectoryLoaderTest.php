@@ -1,15 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PDO;
 use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
 
-class DirectoryLoaderTest extends TestCase
+final class DirectoryLoaderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAGivenDirectory()
+    public function testItLoadsFixturesFromAGivenDirectory(): void
     {
         $expected = [
             'empty' => [],
@@ -42,7 +41,7 @@ class DirectoryLoaderTest extends TestCase
         $this->assertSame($expected, iterator_to_array($actual));
     }
 
-    public function testItLoadsFixturesFromAGivenDirectoryWithoutTrailingSlash()
+    public function testItLoadsFixturesFromAGivenDirectoryWithoutTrailingSlash(): void
     {
         $expected = [
             'empty' => [],

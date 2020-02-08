@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Loader;
 
@@ -10,5 +10,5 @@ interface LoaderInterface
      * @param mixed $thingToLoad
      * @return iterable
      */
-    public function load($thingToLoad);
+    public function load($thingToLoad): iterable;
 }

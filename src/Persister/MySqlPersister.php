@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Persister;
 
@@ -26,7 +26,7 @@ final class MySqlPersister implements PersisterInterface
      * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
      * @return void
      */
-    public function persist($table, array $data)
+    public function persist(string $table, array $data): void
     {
         $columns = array_keys(reset($data));
 
