@@ -12,9 +12,8 @@ class MySqlPersisterTest extends TestCase
 {
     public function testItRunsOneInsertForASingleRowOfData()
     {
-        $prophet = new Prophet();
-        $db = $prophet->prophesize(PDO::class);
-        $statement = $prophet->prophesize(PDOStatement::class);
+        $db = $this->prophesize(PDO::class);
+        $statement = $this->prophesize(PDOStatement::class);
 
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
@@ -37,15 +36,12 @@ class MySqlPersisterTest extends TestCase
                 'column2' => 'value 2',
             ],
         ]);
-
-        $prophet->checkPredictions();
     }
 
     public function testItRunsOneInsertForMultipleRowsOfData()
     {
-        $prophet = new Prophet();
-        $db = $prophet->prophesize(PDO::class);
-        $statement = $prophet->prophesize(PDOStatement::class);
+        $db = $this->prophesize(PDO::class);
+        $statement = $this->prophesize(PDOStatement::class);
 
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
@@ -86,7 +82,5 @@ class MySqlPersisterTest extends TestCase
                 'column2' => 'value 8',
             ],
         ]);
-
-        $prophet->checkPredictions();
     }
 }

@@ -48,7 +48,7 @@ class SqlitePersisterTest extends TestCase
             'value 8',
         ])->shouldBeCalled()->willReturn(true);
 
-        $this->setExpectedException(PDOException::class, 'nope');
+        $this->expectExceptionObject(new PDOException('nope'));
 
         $persister = new SqlitePersister($db->reveal());
 
