@@ -9,6 +9,21 @@ use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 final class Flowder
 {
     /**
+     * @var LoaderInterface
+     */
+    private $loader;
+
+    /**
+     * @var TruncatorInterface
+     */
+    private $truncator;
+
+    /**
+     * @var PersisterInterface
+     */
+    private $persister;
+
+    /**
      * @param LoaderInterface $loader
      * @param TruncatorInterface $truncator
      * @param PersisterInterface $persister
