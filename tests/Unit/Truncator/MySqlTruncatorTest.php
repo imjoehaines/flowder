@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Imjoehaines\Flowder\Test\Integration\Truncator;
+namespace Imjoehaines\Flowder\Test\Unit\Truncator;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
