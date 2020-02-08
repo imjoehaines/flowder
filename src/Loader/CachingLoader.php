@@ -7,7 +7,7 @@ final class CachingLoader implements LoaderInterface
     /**
      * The array of cached data
      *
-     * @var array
+     * @var array<string, array<string, iterable>>
      */
     private $cache = [];
 
