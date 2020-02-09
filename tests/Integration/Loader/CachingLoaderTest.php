@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\CachingLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Test\FileRequireCounter;
+use PHPUnit\Framework\TestCase;
 use Traversable;
 
 final class CachingLoaderTest extends TestCase

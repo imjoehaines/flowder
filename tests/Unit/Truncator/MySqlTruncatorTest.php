@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Unit\Truncator;
 
+use Imjoehaines\Flowder\Truncator\MySqlTruncator;
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Truncator\MySqlTruncator;
 
 final class MySqlTruncatorTest extends TestCase
 {

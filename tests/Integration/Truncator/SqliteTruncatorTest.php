@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Truncator;
 
+use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 
 final class SqliteTruncatorTest extends TestCase
 {

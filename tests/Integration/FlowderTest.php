@@ -1,14 +1,16 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration;
 
-use PDO;
-use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Flowder;
-use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Persister\SqlitePersister;
 use Imjoehaines\Flowder\Truncator\SqliteTruncator;
+use PDO;
+use PHPUnit\Framework\TestCase;
 
 final class FlowderTest extends TestCase
 {

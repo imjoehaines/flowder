@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Unit\Persister;
 
+use Imjoehaines\Flowder\Persister\SqlitePersister;
 use PDO;
 use PDOException;
 use PDOStatement;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\SqlitePersister;
 
 final class SqlitePersisterTest extends TestCase
 {

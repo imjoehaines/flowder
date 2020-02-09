@@ -1,11 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Unit\Persister;
 
+use Imjoehaines\Flowder\Persister\MySqlPersister;
 use PDO;
 use PDOStatement;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\MySqlPersister;
 
 final class MySqlPersisterTest extends TestCase
 {

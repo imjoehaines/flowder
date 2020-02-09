@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Loader\PhpFileLoader;
 use Imjoehaines\Flowder\Loader\DirectoryLoader;
+use Imjoehaines\Flowder\Loader\PhpFileLoader;
+use PHPUnit\Framework\TestCase;
 use Traversable;
 
 final class DirectoryLoaderTest extends TestCase

@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Persister;
 
-use PDO;
 use Exception;
+use PDO;
 
 final class SqlitePersister implements PersisterInterface
 {
