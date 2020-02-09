@@ -2,6 +2,8 @@
 
 Flowder is a (really) simple fixture loader for PHP 7.3+, supporting SQLite and MySQL.
 
+_Using Flowder in PHP 7.2 or below? Try [version 1](https://packagist.org/packages/imjoehaines/flowder#v1.0.0) instead!_
+
 **NB:** If you're looking to use Flowder in a project, you probably want to use an exisiting framework integration:
 
 - [Flowder PHPUnit](https://github.com/imjoehaines/flowder-phpunit) — A Flowder test listener for PHPUnit
