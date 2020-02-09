@@ -1,6 +1,6 @@
 {
     "name": "imjoehaines/flowder",
-    "description": "A simple and extensible fixture loader for PHP 5.6+, supporting SQLite and MySQL",
+    "description": "A simple and extensible fixture loader for PHP 7.3+, supporting SQLite and MySQL",
     "keywords": [
         "fixtures",
         "fixture-loading",
@@ -22,25 +22,33 @@
         "test": "phpunit tests/"
     },
     "config": {
-      "platform": {
-        "php": "5.6"
-      }
+        "platform": {
+          "php": "7.3"
+        }
     },
     "suggest": {
         "imjoehaines/flowdception": "Support for Flowder in Codeception test suites",
         "imjoehaines/flowder-phpunit": "Support for Flowder in PHPUnit test suites"
     },
+    "require": {
+        "php": "^7.3"
+    },
     "require-dev": {
-        "phpunit/phpunit": "^5.0"
+        "phpunit/phpunit": "9.0.0",
+        "phpstan/phpstan": "^0.12.9",
+        "jangregor/phpstan-prophecy": "^0.6.1",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan-phpunit": "^0.12.6",
+        "symplify/easy-coding-standard": "^7.2"
     },
     "autoload": {
-      "psr-4": {
-        "Imjoehaines\\Flowder\\": "src/"
-      }
+        "psr-4": {
+          "Imjoehaines\\Flowder\\": "src/"
+        }
     },
     "autoload-dev": {
-      "psr-4": {
-        "Imjoehaines\\Flowder\\Test\\": "tests/"
-      }
+        "psr-4": {
+          "Imjoehaines\\Flowder\\Test\\": "tests/"
+        }
     }
 }

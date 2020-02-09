@@ -1,0 +1,21 @@
+parameters:
+    level: max
+
+    # These are errors that we kind of handle in the type annotations, but checking them
+    # explicitly is too costly to be worth it. If the functions fail things will blow up
+    # and it should be easy enough to figure out what's wrong
+    ignoreErrors:
+        -
+            message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+            count: 1
+            path: src/Loader/DirectoryLoader.php
+
+        -
+            message: "#^Parameter \\#1 \\$input of function array_keys expects array, array\\<string, float\\|int\\|string\\|null\\>\\|false given\\.$#"
+            count: 1
+            path: src/Persister/MySqlPersister.php
+
+        -
+            message: "#^Parameter \\#1 \\$input of function array_keys expects array, array\\<string, float\\|int\\|string\\|null\\>\\|false given\\.$#"
+            count: 1
+            path: src/Persister/SqlitePersister.php

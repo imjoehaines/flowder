@@ -1,20 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Test\Unit\Persister;
 
+use Imjoehaines\Flowder\Persister\MySqlPersister;
 use PDO;
 use PDOStatement;
-use Prophecy\Prophet;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\MySqlPersister;
 
-class MySqlPersisterTest extends TestCase
+final class MySqlPersisterTest extends TestCase
 {
-    public function testItRunsOneInsertForASingleRowOfData()
+    public function testItRunsOneInsertForASingleRowOfData(): void
     {
-        $prophet = new Prophet();
-        $db = $prophet->prophesize(PDO::class);
-        $statement = $prophet->prophesize(PDOStatement::class);
+        $db = $this->prophesize(PDO::class);
+        $statement = $this->prophesize(PDOStatement::class);
 
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
@@ -37,15 +37,12 @@ class MySqlPersisterTest extends TestCase
                 'column2' => 'value 2',
             ],
         ]);
-
-        $prophet->checkPredictions();
     }
 
-    public function testItRunsOneInsertForMultipleRowsOfData()
+    public function testItRunsOneInsertForMultipleRowsOfData(): void
     {
-        $prophet = new Prophet();
-        $db = $prophet->prophesize(PDO::class);
-        $statement = $prophet->prophesize(PDOStatement::class);
+        $db = $this->prophesize(PDO::class);
+        $statement = $this->prophesize(PDOStatement::class);
 
         $db->exec('SET foreign_key_checks = 0')->shouldBeCalled();
 
@@ -86,7 +83,5 @@ class MySqlPersisterTest extends TestCase
                 'column2' => 'value 8',
             ],
         ]);
-
-        $prophet->checkPredictions();
     }
 }

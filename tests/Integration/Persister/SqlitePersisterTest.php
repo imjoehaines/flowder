@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Test\Integration\Persister;
 
+use Imjoehaines\Flowder\Persister\SqlitePersister;
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Persister\SqlitePersister;
 
-class SqlitePersisterTest extends TestCase
+final class SqlitePersisterTest extends TestCase
 {
-    public function testItRunsOneInsertForASingleRowOfData()
+    public function testItRunsOneInsertForASingleRowOfData(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -45,7 +47,7 @@ class SqlitePersisterTest extends TestCase
         );
     }
 
-    public function testItRunsOneInsertForMultipleRowsOfData()
+    public function testItRunsOneInsertForMultipleRowsOfData(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -102,7 +104,7 @@ class SqlitePersisterTest extends TestCase
         );
     }
 
-    public function testItCanHandleBrokenForeignKeys()
+    public function testItCanHandleBrokenForeignKeys(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder;
 
 use Imjoehaines\Flowder\Loader\LoaderInterface;
@@ -8,6 +10,21 @@ use Imjoehaines\Flowder\Truncator\TruncatorInterface;
 
 final class Flowder
 {
+    /**
+     * @var LoaderInterface
+     */
+    private $loader;
+
+    /**
+     * @var TruncatorInterface
+     */
+    private $truncator;
+
+    /**
+     * @var PersisterInterface
+     */
+    private $persister;
+
     /**
      * @param LoaderInterface $loader
      * @param TruncatorInterface $truncator
@@ -27,7 +44,7 @@ final class Flowder
      * @param mixed $thingToLoad
      * @return void
      */
-    public function loadFixtures($thingToLoad)
+    public function loadFixtures($thingToLoad): void
     {
         $data = $this->loader->load($thingToLoad);
 

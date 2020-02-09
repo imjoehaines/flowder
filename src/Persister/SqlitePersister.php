@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Persister;
 
 use PDO;
-use Exception;
+use Throwable;
 
 final class SqlitePersister implements PersisterInterface
 {
     /**
      * @var PDO
      */
-    protected $db;
+    private $db;
 
     /**
      * @param PDO $db
@@ -27,10 +29,10 @@ final class SqlitePersister implements PersisterInterface
      * a separate insert per row of data inside a transaction
      *
      * @param string $table
-     * @param array $data multidimensional in the format `[['column' => 'value'], ...]`
+     * @param array<array<string, string|int|float|null>> $data in the format `[['column' => 'value'], ...]`
      * @return void
      */
-    public function persist($table, array $data)
+    public function persist(string $table, array $data): void
     {
         $columns = array_keys(reset($data));
         $placeholders = implode(', ', array_fill(0, count($columns), '?'));
@@ -56,7 +58,7 @@ final class SqlitePersister implements PersisterInterface
             }
 
             $this->db->exec('COMMIT TRANSACTION');
-        } catch (Exception $e) {
+        } catch (Throwable $e) {
             $this->db->exec('ROLLBACK');
 
             throw $e;

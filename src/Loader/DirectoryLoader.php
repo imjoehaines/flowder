@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Loader;
 
 final class DirectoryLoader implements LoaderInterface
@@ -23,14 +25,12 @@ final class DirectoryLoader implements LoaderInterface
      * Load the given directory
      *
      * @param string $directory
-     * @return iterable
+     * @return iterable<string, iterable>
      */
-    public function load($directory)
+    public function load($directory): iterable
     {
         foreach (glob($directory . '/*') as $file) {
-            foreach ($this->loader->load($file) as $table => $data) {
-                yield $table => $data;
-            }
+            yield from $this->loader->load($file);
         }
     }
 }

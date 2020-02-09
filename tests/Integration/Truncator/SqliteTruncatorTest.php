@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Test\Integration\Truncator;
 
+use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 use PDO;
 use PHPUnit\Framework\TestCase;
-use Imjoehaines\Flowder\Truncator\SqliteTruncator;
 
-class SqliteTruncatorTest extends TestCase
+final class SqliteTruncatorTest extends TestCase
 {
-    public function testItTruncatesAGivenTable()
+    public function testItTruncatesAGivenTable(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -36,7 +38,7 @@ class SqliteTruncatorTest extends TestCase
         $this->assertSame($expectedAfter, $actualAfter);
     }
 
-    public function testItDoesntBreakWhenThereAreForeignKeys()
+    public function testItDoesntBreakWhenThereAreForeignKeys(): void
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Truncator;
 
 use PDO;
@@ -25,7 +27,7 @@ final class MySqlTruncator implements TruncatorInterface
      * @param string $table
      * @return void
      */
-    public function truncate($table)
+    public function truncate(string $table): void
     {
         $this->db->exec('SET foreign_key_checks = 0');
         $this->db->exec('TRUNCATE TABLE `' . $table . '`');

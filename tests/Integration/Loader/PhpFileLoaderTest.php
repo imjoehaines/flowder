@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Imjoehaines\Flowder\Test\Integration\Loader;
 
-use PDO;
-use PHPUnit\Framework\TestCase;
 use Imjoehaines\Flowder\Loader\PhpFileLoader;
+use PHPUnit\Framework\TestCase;
+use Traversable;
 
-class PhpFileLoaderTest extends TestCase
+final class PhpFileLoaderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAGivenFile()
+    public function testItLoadsFixturesFromAGivenFile(): void
     {
         $expected = [
             'loader_test_data' => [
@@ -33,6 +35,7 @@ class PhpFileLoaderTest extends TestCase
         $loader = new PhpFileLoader();
         $actual = $loader->load(__DIR__ . '/../../data/loader_test_data.php');
 
+        $this->assertInstanceOf(Traversable::class, $actual);
         $this->assertSame($expected, iterator_to_array($actual));
     }
 }
