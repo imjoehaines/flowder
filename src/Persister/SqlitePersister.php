@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Imjoehaines\Flowder\Persister;
 
-use Exception;
 use PDO;
+use Throwable;
 
 final class SqlitePersister implements PersisterInterface
 {
@@ -58,7 +58,7 @@ final class SqlitePersister implements PersisterInterface
             }
 
             $this->db->exec('COMMIT TRANSACTION');
-        } catch (Exception $e) {
+        } catch (Throwable $e) {
             $this->db->exec('ROLLBACK');
 
             throw $e;
