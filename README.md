@@ -1,6 +1,6 @@
 # Flowder [![Latest Stable Version](https://poser.pugx.org/imjoehaines/flowder/v/stable)](https://packagist.org/packages/imjoehaines/flowder)
 
-Flowder is a (really) simple fixture loader for PHP 5.6+, supporting SQLite and MySQL.
+Flowder is a (really) simple fixture loader for PHP 7.3+, supporting SQLite and MySQL.
 
 **NB:** If you're looking to use Flowder in a project, you probably want to use an exisiting framework integration:
 
