@@ -12,7 +12,7 @@ final class SqlitePersister implements PersisterInterface
     /**
      * @var PDO
      */
-    protected $db;
+    private $db;
 
     /**
      * @param PDO $db
