@@ -4519,16 +4519,16 @@
         },
         {
             "name": "symplify/auto-bind-parameter",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/auto-bind-parameter.git",
-                "reference": "ff9c5b60aba14f5a91449684f28a52e4411181c3"
+                "reference": "68dfebf8632e0eb14e09ceec5fbc73224669ecd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/auto-bind-parameter/zipball/ff9c5b60aba14f5a91449684f28a52e4411181c3",
-                "reference": "ff9c5b60aba14f5a91449684f28a52e4411181c3",
+                "url": "https://api.github.com/repos/symplify/auto-bind-parameter/zipball/68dfebf8632e0eb14e09ceec5fbc73224669ecd6",
+                "reference": "68dfebf8632e0eb14e09ceec5fbc73224669ecd6",
                 "shasum": ""
             },
             "require": {
@@ -4536,7 +4536,7 @@
                 "php": "^7.2",
                 "symfony/dependency-injection": "^4.4|^5.0",
                 "symfony/http-kernel": "^4.4|^5.0",
-                "symplify/package-builder": "^7.2.4"
+                "symplify/package-builder": "^7.2.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5|^9.0"
@@ -4557,20 +4557,20 @@
                 "MIT"
             ],
             "description": "Auto bind parameters for your Symfony applications",
-            "time": "2020-03-12T09:43:53+00:00"
+            "time": "2020-03-17T17:03:00+00:00"
         },
         {
             "name": "symplify/autowire-array-parameter",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/autowire-array-parameter.git",
-                "reference": "3acb60ed2aa469a222f39dd79fcc12d64e30b6d5"
+                "reference": "3366b39271efcdac30e11edec092ecef4efb75dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/autowire-array-parameter/zipball/3acb60ed2aa469a222f39dd79fcc12d64e30b6d5",
-                "reference": "3acb60ed2aa469a222f39dd79fcc12d64e30b6d5",
+                "url": "https://api.github.com/repos/symplify/autowire-array-parameter/zipball/3366b39271efcdac30e11edec092ecef4efb75dc",
+                "reference": "3366b39271efcdac30e11edec092ecef4efb75dc",
                 "shasum": ""
             },
             "require": {
@@ -4578,7 +4578,7 @@
                 "nette/utils": "^3.0",
                 "php": "^7.2",
                 "symfony/dependency-injection": "^4.4|^5.0",
-                "symplify/package-builder": "^7.2.4"
+                "symplify/package-builder": "^7.2.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5|^9.0"
@@ -4599,20 +4599,20 @@
                 "MIT"
             ],
             "description": "Autowire array parameters for your Symfony applications",
-            "time": "2020-03-12T09:43:53+00:00"
+            "time": "2020-03-17T17:03:00+00:00"
         },
         {
             "name": "symplify/coding-standard",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/coding-standard.git",
-                "reference": "9e994e7309cc8f1c80467eb91512538bc938b28a"
+                "reference": "9d5a66bc42501563bb2b41875011c058867bc9fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/coding-standard/zipball/9e994e7309cc8f1c80467eb91512538bc938b28a",
-                "reference": "9e994e7309cc8f1c80467eb91512538bc938b28a",
+                "url": "https://api.github.com/repos/symplify/coding-standard/zipball/9d5a66bc42501563bb2b41875011c058867bc9fa",
+                "reference": "9d5a66bc42501563bb2b41875011c058867bc9fa",
                 "shasum": ""
             },
             "require": {
@@ -4622,15 +4622,15 @@
                 "php": "^7.2",
                 "phpstan/phpdoc-parser": "^0.4",
                 "squizlabs/php_codesniffer": "^3.5",
-                "symplify/autowire-array-parameter": "^7.2.4",
-                "symplify/package-builder": "^7.2.4",
-                "symplify/smart-file-system": "^7.2.4"
+                "symplify/autowire-array-parameter": "^7.2.5",
+                "symplify/package-builder": "^7.2.5",
+                "symplify/smart-file-system": "^7.2.5"
             },
             "require-dev": {
                 "nette/application": "^3.0",
                 "phpunit/phpunit": "^8.5|^9.0",
-                "symplify/easy-coding-standard-tester": "^7.2.4",
-                "symplify/package-builder": "^7.2.4"
+                "symplify/easy-coding-standard-tester": "^7.2.5",
+                "symplify/package-builder": "^7.2.5"
             },
             "type": "library",
             "extra": {
@@ -4649,20 +4649,20 @@
                 "MIT"
             ],
             "description": "Set of Symplify rules for PHP_CodeSniffer and PHP CS Fixer.",
-            "time": "2020-03-12T09:43:53+00:00"
+            "time": "2020-03-17T17:03:00+00:00"
         },
         {
             "name": "symplify/easy-coding-standard",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "87b9af5959fa6ccfb98a3d50123174715fbe3d4c"
+                "reference": "598ee98b27f4452459e720cba10ef0c48ab680b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/87b9af5959fa6ccfb98a3d50123174715fbe3d4c",
-                "reference": "87b9af5959fa6ccfb98a3d50123174715fbe3d4c",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/598ee98b27f4452459e720cba10ef0c48ab680b7",
+                "reference": "598ee98b27f4452459e720cba10ef0c48ab680b7",
                 "shasum": ""
             },
             "require": {
@@ -4683,19 +4683,19 @@
                 "symfony/finder": "^4.4|^5.0",
                 "symfony/http-kernel": "^4.4|^5.0",
                 "symfony/yaml": "^4.4|^5.0",
-                "symplify/auto-bind-parameter": "^7.2.4",
-                "symplify/autowire-array-parameter": "^7.2.4",
-                "symplify/coding-standard": "^7.2.4",
-                "symplify/package-builder": "^7.2.4",
-                "symplify/set-config-resolver": "^7.2.4",
-                "symplify/smart-file-system": "^7.2.4"
+                "symplify/auto-bind-parameter": "^7.2.5",
+                "symplify/autowire-array-parameter": "^7.2.5",
+                "symplify/coding-standard": "^7.2.5",
+                "symplify/package-builder": "^7.2.5",
+                "symplify/set-config-resolver": "^7.2.5",
+                "symplify/smart-file-system": "^7.2.5"
             },
             "replace": {
                 "symfony/polyfill-php70": "*"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5|^9.0",
-                "symplify/easy-coding-standard-tester": "^7.2.4"
+                "symplify/easy-coding-standard-tester": "^7.2.5"
             },
             "bin": [
                 "bin/ecs"
@@ -4720,20 +4720,20 @@
                 "MIT"
             ],
             "description": "Use Coding Standard with 0-knowledge of PHP-CS-Fixer and PHP_CodeSniffer.",
-            "time": "2020-03-12T09:43:53+00:00"
+            "time": "2020-03-17T17:03:00+00:00"
         },
         {
             "name": "symplify/package-builder",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/package-builder.git",
-                "reference": "819df91cdc61e901429746656acec37ef1f38aac"
+                "reference": "12ef9a0344eafda649ede606a13a38c26f65b64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/package-builder/zipball/819df91cdc61e901429746656acec37ef1f38aac",
-                "reference": "819df91cdc61e901429746656acec37ef1f38aac",
+                "url": "https://api.github.com/repos/symplify/package-builder/zipball/12ef9a0344eafda649ede606a13a38c26f65b64c",
+                "reference": "12ef9a0344eafda649ede606a13a38c26f65b64c",
                 "shasum": ""
             },
             "require": {
@@ -4770,16 +4770,16 @@
         },
         {
             "name": "symplify/set-config-resolver",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/set-config-resolver.git",
-                "reference": "04b48cead95bf20d4091b44b71dbb346d70c8e90"
+                "reference": "79ec8dae1e040e451e5bd8532a15dfae27178a37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/set-config-resolver/zipball/04b48cead95bf20d4091b44b71dbb346d70c8e90",
-                "reference": "04b48cead95bf20d4091b44b71dbb346d70c8e90",
+                "url": "https://api.github.com/repos/symplify/set-config-resolver/zipball/79ec8dae1e040e451e5bd8532a15dfae27178a37",
+                "reference": "79ec8dae1e040e451e5bd8532a15dfae27178a37",
                 "shasum": ""
             },
             "require": {
@@ -4788,7 +4788,7 @@
                 "symfony/console": "^4.4|^5.0",
                 "symfony/filesystem": "^4.4|^5.0",
                 "symfony/finder": "^4.4|^5.0",
-                "symplify/smart-file-system": "^7.2.4"
+                "symplify/smart-file-system": "^7.2.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5|^9.0"
@@ -4809,20 +4809,20 @@
                 "MIT"
             ],
             "description": "Resolve config and sets from configs and cli opptions for CLI applications",
-            "time": "2020-03-12T09:43:53+00:00"
+            "time": "2020-03-17T17:03:00+00:00"
         },
         {
             "name": "symplify/smart-file-system",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/smart-file-system.git",
-                "reference": "5e0fa2a90bae6174bc2de2f8a40ab216b0e38e50"
+                "reference": "512a80d98c5ba6770384633b08fc712309118f76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/smart-file-system/zipball/5e0fa2a90bae6174bc2de2f8a40ab216b0e38e50",
-                "reference": "5e0fa2a90bae6174bc2de2f8a40ab216b0e38e50",
+                "url": "https://api.github.com/repos/symplify/smart-file-system/zipball/512a80d98c5ba6770384633b08fc712309118f76",
+                "reference": "512a80d98c5ba6770384633b08fc712309118f76",
                 "shasum": ""
             },
             "require": {
