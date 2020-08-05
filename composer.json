@@ -38,7 +38,7 @@
         "phpstan/phpstan": "^0.12.36",
         "jangregor/phpstan-prophecy": "^0.8.0",
         "phpstan/extension-installer": "^1.0",
-        "phpstan/phpstan-phpunit": "^0.12.15",
+        "phpstan/phpstan-phpunit": "^0.12.16",
         "symplify/easy-coding-standard": "^8.1"
     },
     "autoload": {
