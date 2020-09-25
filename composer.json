@@ -34,7 +34,7 @@
         "php": "^7.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "9.3.10",
+        "phpunit/phpunit": "9.3.11",
         "phpstan/phpstan": "^0.12.43",
         "jangregor/phpstan-prophecy": "^0.8.0",
         "phpstan/extension-installer": "^1.0",
