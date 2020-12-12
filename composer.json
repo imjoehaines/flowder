@@ -39,7 +39,7 @@
         "jangregor/phpstan-prophecy": "^0.8.1",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan-phpunit": "^0.12.16",
-        "symplify/easy-coding-standard": "^8.3"
+        "symplify/easy-coding-standard": "^9.0"
     },
     "autoload": {
         "psr-4": {
