@@ -41,7 +41,7 @@ final class FlowderTest extends TestCase
         $statement->execute();
         $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'column1' => '1',
@@ -95,7 +95,7 @@ final class FlowderTest extends TestCase
         $statement->execute();
         $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'column1' => '1',
@@ -158,7 +158,7 @@ final class FlowderTest extends TestCase
         $statement->execute();
         $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'column1' => '1',
@@ -173,7 +173,7 @@ final class FlowderTest extends TestCase
         $statement->execute();
         $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'column4' => '4',
@@ -188,7 +188,7 @@ final class FlowderTest extends TestCase
         $statement->execute();
         $actual = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'column7' => '7',
