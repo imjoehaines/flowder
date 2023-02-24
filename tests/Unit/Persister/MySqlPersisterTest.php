@@ -8,9 +8,12 @@ use Imjoehaines\Flowder\Persister\MySqlPersister;
 use PDO;
 use PDOStatement;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 final class MySqlPersisterTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testItRunsOneInsertForASingleRowOfData(): void
     {
         $db = $this->prophesize(PDO::class);
