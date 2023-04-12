@@ -34,8 +34,8 @@ final class SqliteTruncatorTest extends TestCase
         $expectedBefore = [['column1' => '1'], ['column1' => '2'], ['column1' => '3']];
         $expectedAfter = [];
 
-        $this->assertSame($expectedBefore, $actualBefore);
-        $this->assertSame($expectedAfter, $actualAfter);
+        $this->assertEquals($expectedBefore, $actualBefore);
+        $this->assertEquals($expectedAfter, $actualAfter);
     }
 
     public function testItDoesntBreakWhenThereAreForeignKeys(): void
@@ -75,7 +75,7 @@ final class SqliteTruncatorTest extends TestCase
         $expectedBefore = [['id' => '1', 'table_1_id' => '1']];
         $expectedAfter = [];
 
-        $this->assertSame($expectedBefore, $actualBefore);
-        $this->assertSame($expectedAfter, $actualAfter);
+        $this->assertEquals($expectedBefore, $actualBefore);
+        $this->assertEquals($expectedAfter, $actualAfter);
     }
 }

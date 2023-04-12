@@ -7,9 +7,12 @@ namespace Imjoehaines\Flowder\Test\Unit\Truncator;
 use Imjoehaines\Flowder\Truncator\MySqlTruncator;
 use PDO;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 final class MySqlTruncatorTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testItTruncatesAGivenTable(): void
     {
         $db = $this->prophesize(PDO::class);
