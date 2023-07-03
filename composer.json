@@ -22,9 +22,6 @@
         "test": "phpunit tests/"
     },
     "config": {
-        "platform": {
-          "php": "7.3"
-        },
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": false,
             "phpstan/extension-installer": false
