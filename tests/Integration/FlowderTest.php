@@ -14,10 +14,18 @@ use PHPUnit\Framework\TestCase;
 
 final class FlowderTest extends TestCase
 {
-    public function testItLoadsFixturesFromAFileIfGivenThePathToAFile(): void
+    private function getDatabaseConnection(): PDO
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, true);
+
+        return $db;
+    }
+
+    public function testItLoadsFixturesFromAFileIfGivenThePathToAFile(): void
+    {
+        $db = $this->getDatabaseConnection();
 
         $db->exec('CREATE TABLE IF NOT EXISTS loader_test_data (
             column1 INT PRIMARY KEY,
@@ -65,8 +73,7 @@ final class FlowderTest extends TestCase
 
     public function testItTruncatesDataBeforeInsertingAgain(): void
     {
-        $db = new PDO('sqlite::memory:');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = $this->getDatabaseConnection();
 
         $db->exec('CREATE TABLE IF NOT EXISTS loader_test_data (
             column1 INT PRIMARY KEY,
@@ -119,8 +126,7 @@ final class FlowderTest extends TestCase
 
     public function testItLoadsFixturesFromADirectoryIfGivenThePathToADirectory(): void
     {
-        $db = new PDO('sqlite::memory:');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = $this->getDatabaseConnection();
 
         $db->exec('CREATE TABLE IF NOT EXISTS empty (column1 INT PRIMARY KEY)');
 
