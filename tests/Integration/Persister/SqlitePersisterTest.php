@@ -10,10 +10,18 @@ use PHPUnit\Framework\TestCase;
 
 final class SqlitePersisterTest extends TestCase
 {
-    public function testItRunsOneInsertForASingleRowOfData(): void
+    private function getDatabaseConnection(): PDO
     {
         $db = new PDO('sqlite::memory:');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, true);
+
+        return $db;
+    }
+
+    public function testItRunsOneInsertForASingleRowOfData(): void
+    {
+        $db = $this->getDatabaseConnection();
 
         $db->exec('CREATE TABLE IF NOT EXISTS test_table (
             column1 INT PRIMARY KEY,
@@ -49,8 +57,7 @@ final class SqlitePersisterTest extends TestCase
 
     public function testItRunsOneInsertForMultipleRowsOfData(): void
     {
-        $db = new PDO('sqlite::memory:');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = $this->getDatabaseConnection();
 
         $db->exec('CREATE TABLE IF NOT EXISTS test_table (
             column1 INT PRIMARY KEY,
@@ -106,8 +113,7 @@ final class SqlitePersisterTest extends TestCase
 
     public function testItCanHandleBrokenForeignKeys(): void
     {
-        $db = new PDO('sqlite::memory:');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = $this->getDatabaseConnection();
 
         $db->exec('PRAGMA foreign_keys = ON');
 

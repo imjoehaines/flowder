@@ -9,9 +9,12 @@ use PDO;
 use PDOException;
 use PDOStatement;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 final class SqlitePersisterTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testItRollsbackUponError(): void
     {
         $db = $this->prophesize(PDO::class);
